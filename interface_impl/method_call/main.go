@@ -2,24 +2,24 @@ package main
 
 // call with pointer vs call with object
 
-type Cat struct{
+type Cat struct {
 	Name string
 }
 
-type Duck interface{
+type Duck interface {
 	Quack()
 }
 
-func (c Cat) Quack() { 	// 使用结构体实现接口
+func (c Cat) Quack() { // 使用结构体实现接口
 	println(c.Name)
-}p
+}
 
 //func (c *Cat) Quack() {  // 使用结构体指针实现接口
 //	println(c.Name)
 //}
 
 func main() {
-	var s Duck = Cat{Name:"meow"}  // 使用结构体初始化变量
+	var s Duck = Cat{Name: "meow"} // 使用结构体初始化变量
 	println(&s)
 	s.Quack()
 
