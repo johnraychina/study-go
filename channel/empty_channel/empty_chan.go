@@ -5,9 +5,9 @@ import (
 	"time"
 )
 
-// channel 调用close后，会变成一个类似于slice的东西，有可能返回零值
-// channel 应该配合go使用，直接在main执行路径上使用容易导致deadlock
 // channel 没close，无数据时，从中取数据，程序会被阻塞，陷入等待
+// channel 应该配合go使用，直接在main执行路径上使用容易导致deadlock，这可是运行时的fatal error，recover不了
+// channel 调用close后，会变成一个类似于slice的东西，有可能返回零值
 func main() {
 	fetchEmptyOpenChannel()      // 直接报错 deadlock
 	fetchEmptyClosedChannel()    // 直接取会返回零值
