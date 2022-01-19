@@ -6,9 +6,19 @@ func main() {
 	//var f1 Fish = nil //Cannot use 'nil' as the type Fish
 	//fmt.Println(f1)
 
+	// struct implementation pointer as interface always not nil
 	var f2 *Fish = nil
 	NilInterface(f2)
 
+	//err := doBiz()
+	//if err != nil {
+	//	fmt.Println("error :", err)
+	//} else {
+	//	fmt.Println("OK")
+	//}
+}
+func doBiz() interface{} {
+	return nil
 }
 
 type ObjectI interface {
