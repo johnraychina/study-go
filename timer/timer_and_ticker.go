@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func StartTickerWithTimer() {
 
 	timer := time.NewTimer(3 * time.Second)
 	defer timer.Stop()
